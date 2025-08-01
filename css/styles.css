@@ -1,0 +1,262 @@
+:root {
+    --degr: 345deg;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5vw;
+    margin-bottom: 5vh;
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background-clip: text;
+    color: transparent;
+}
+
+h3 {
+    font-size: 1vw;
+}
+
+p {
+    font-size: 0.8vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    position: relative;
+    width: 30%;
+}
+
+.circle-container{
+    margin-top: -5%;
+    aspect-ratio: 1 / 1;
+}
+
+.triangle{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.triangle img{
+    position: relative;
+    width: 5%;
+    height: 5%;
+    margin-top: -52%;
+}
+
+.circ {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+
+.spin {
+    animation-name: rotateWheel;
+    animation-duration: 10s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateWheel {
+    100%{
+        transform: rotate(var(--degr));
+    }
+}
+
+
+li {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0% 100%;
+    border: 1px solid black;
+}
+
+.text {
+    position: absolute;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    text-align: center;
+    transform: skewY(60deg) rotate(15deg);
+    padding-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.text p {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size: 1.2vw;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%
+}
+
+.result {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-image: linear-gradient(to right, green , gold);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    margin-top: 4%;
+}
+
+.disabled {
+    opacity: 0.6;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.button p {
+    font-weight: bold;
+}
+
+
+#result p {
+    font-weight: bold;
+}
+li:first-child {
+    transform: rotate(0deg) skewY(-60deg);
+}
+
+li:nth-child(2) {
+    transform: rotate(30deg) skewY(-60deg);
+}
+
+li:nth-child(3) {
+    transform: rotate(60deg) skewY(-60deg);
+}
+
+li:nth-child(4) {
+    transform: rotate(90deg) skewY(-60deg);
+}
+
+li:nth-child(5) {
+    transform: rotate(120deg) skewY(-60deg);
+}
+
+li:nth-child(6) {
+    transform: rotate(150deg) skewY(-60deg);
+}
+
+li:nth-child(7) {
+    transform: rotate(180deg) skewY(-60deg);
+}
+
+li:nth-child(8) {
+    transform: rotate(210deg) skewY(-60deg);
+}
+
+li:nth-child(9) {
+    transform: rotate(240deg) skewY(-60deg);
+}
+
+li:nth-child(10) {
+    transform: rotate(270deg) skewY(-60deg);
+}
+
+li:nth-child(11) {
+    transform: rotate(300deg) skewY(-60deg);
+}
+
+li:nth-child(12) {
+    transform: rotate(330deg) skewY(-60deg);
+}
+
+li:first-child .text {
+    background: green;
+}
+
+li:nth-child(2) .text {
+    background: lightgreen;
+}
+
+li:nth-child(3) .text {
+    background: limegreen;
+}
+
+li:nth-child(4) .text {
+    background: white;
+}
+
+li:nth-child(5) .text {
+    background: gold;
+}
+
+li:nth-child(6) .text {
+    background: black;
+    color: white;
+}
+
+li:nth-child(7) .text {
+    background: limegreen;
+}
+
+li:nth-child(8) .text {
+    background: greenyellow;
+}
+
+li:nth-child(9) .text {
+    background: green;
+}
+
+li:nth-child(10) .text {
+    background: white;
+}
+
+li:nth-child(11) .text {
+    background: lime;
+}
+
+li:nth-child(12) .text {
+    background: black;
+    color: white;
+}
