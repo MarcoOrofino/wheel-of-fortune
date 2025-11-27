@@ -9,42 +9,69 @@ body{
     width: 100vw;
     height: 100vh;
     margin: 0;
+    background: radial-gradient(circle at top, #e0eafc, #cfdef3 70%);
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 h1 {
     font-size: 5vw;
     margin-bottom: 5vh;
-    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background: linear-gradient(90deg, #34495e, #2c3e50);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
 }
 
 h3 {
     font-size: 4vw;
+    text-align: center;
 }
 
 p {
     font-size: 3vw;
+    margin: 0;
 }
 
 .container{
-    width: 100vw;
-    height: 100vh;
+    width: 95%;
+    max-width: 900px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 10px 50px;
+    overflow: visible;
 }
 
 /*La creazione della ruota*/
 
 .circle {
     position: relative;
-    width: 80%;
+    width: 90%;
+    max-width: 550px;
 }
 
 .circle-container{
-    margin-top: -5%;
+    margin-top: -3%;
     aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: visible;
+    background: radial-gradient(circle at center, #ffffff 40%, #e0e0e0);
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.8),
+        inset 0 0 40px rgba(0,0,0,0.15),
+        0 5px 25px rgba(0,0,0,0.2);
 }
 
 /*Gestione del puntatore del risultato finale*/
@@ -65,13 +92,14 @@ p {
     width: 5%;
     height: 5%;
     margin-top: -52%;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
 }
 
 /*Ruota in sé*/
 
 .circ {
     position: relative;
-    border: 1px solid black;
+    border: 3px solid #444;
     border-radius: 50%;
     list-style: none;
     overflow: hidden;
@@ -80,6 +108,7 @@ p {
     padding: 0;
     transform: rotate(-15deg);
     z-index: 1;
+    box-sizing: border-box;
 }
 
 /*Animazione della ruota*/
@@ -107,7 +136,9 @@ li {
     width: 50%;
     height: 50%;
     transform-origin: 0% 100%;
-    border: 1px solid black;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
 }
 
 .text {
@@ -117,7 +148,7 @@ li {
     height: 200%;
     text-align: center;
     transform: skewY(60deg) rotate(15deg);
-    padding-top: 8%;
+    padding-top: 6%;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -128,9 +159,11 @@ li {
 .text p {
     writing-mode: vertical-lr;
     text-orientation: upright;
-    font-size: 3vw;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 600;
+    font-size: 0.6rem;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    color: #111;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
 }
 
 /*Gestione del Bottone*/
@@ -140,22 +173,30 @@ li {
     flex-direction: column;
     justify-content: space-around;
     width: 80%;
+    margin-top: 30px;
 }
 
 button {
-    background-image: linear-gradient(to right, green , gold);
+    background: linear-gradient(135deg, #556270, #4ecdc4);
     border: none;
     color: white;
-    padding: 10px 25px;
+    padding: 14px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1vw;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 10px;
     margin-top: 4%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
 }
 
 button:hover {
     cursor: pointer;
+    transform: scale(1.07);
+    box-shadow: 0 6px 25px rgba(78, 205, 196, 0.6);
+    filter: brightness(1.1);
 }
 
 .disabled {
@@ -164,10 +205,12 @@ button:hover {
 
 .disabled:hover {
     cursor: not-allowed;
+    transform: none;
 }
 
 .button p {
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /*Gestione del risultato scritto*/
@@ -178,6 +221,7 @@ button:hover {
     position: relative;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 #result p {
@@ -190,18 +234,18 @@ button:hover {
     h1{font-size: 2.5vw;}
     h3{font-size: 2.5vw;}
     p{font-size: 1.4vw;}
-    .circle{width: 60%;}
-    .text p{font-size: 2vw}
-    .button{width: 60%}
+    .circle{width: 70%; max-width: 550px;}
+    .text p{font-size: 0.6rem;}
+    .button{width: 60%;}
 }
 
 @media(min-width: 769px) {
-    h1{font-size: 1.5vw;}
-    h3{font-size: 1vw;}
-    p{font-size: 0.8vw;}
-    .circle{width: 30%;}
-    .text p{font-size: 1.2vw}
-    .button{width: 30%}
+    h1{font-size: 2vw;}
+    h3{font-size: 1.2vw;}
+    p{font-size: 1vw;}
+    .circle{width: 55%; max-width: 600px;}
+    .text p{font-size: 0.8rem;}
+    .button{width: 35%;}
 }
 
 /*Gestione aggiuntiva per ogni spicchio*/
@@ -281,6 +325,10 @@ li:nth-child(6) .text {
     color: white;
 }
 
+li:nth-child(6) .text p {
+    color: white;
+}
+
 li:nth-child(7) .text {
     background: limegreen;
 }
@@ -303,5 +351,9 @@ li:nth-child(11) .text {
 
 li:nth-child(12) .text {
     background: black;
+    color: white;
+}
+
+li:nth-child(12) .text p {
     color: white;
 }
