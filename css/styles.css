@@ -237,20 +237,6 @@ button:hover {
     .circle{width: 70%; max-width: 550px;}
     .text p{font-size: 0.6rem;}
     .button{width: 60%;}
-
-    body{
-        background: radial-gradient(circle at top, #e0eafc, #cfdef3 70%);
-    }
-
-    .container{
-        width: 70%;
-        max-width: 900px;
-        height: auto;
-        border-radius: 16px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-        background-color: #fff;
-        padding: 20px 10px 50px;
-    }
 }
 
 @media(min-width: 769px) {
